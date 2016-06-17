@@ -206,7 +206,7 @@ module Rabl
 
     # Sets the cache key to be used by ActiveSupport::Cache.expand_cache_key
     # cache @user            # calls @user.cache_key
-    # cache ['rabl', @user]  # calls @user.cache_key and prefixes with rabl/
+    # cache ['rabl', root_object.cache_key]  # joins strings provided but doesn't call #cache_key on objects
     # cache 'user'           # explicit key of 'user'
     # cache                  # uses the current item within a collection
     # cache 'user', expires_in: 1.hour
